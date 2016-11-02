@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row"  >
+    <div class="col-sm-8 col-sm-offset-2 fondo">
+      <center><h1 class="fondow">Empleados</h1></center>
+
+      <p>
+        {{link-to "Nuevo Empleado" "empleados.new" class="btn btn-info btn-block"}}
+      </p>
+
+      {{#if model.length}}
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Paterno</th>
+              <th>Materno</th>
+              <th>Correo</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
+              <th>Area</th>
+              <th colspan="3">
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each model as |empleado|}}
+              <tr>
+                <td>{{empleado.nombre}}</td>
+                <td>{{empleado.paterno}}</td>
+                <td>{{empleado.materno}}</td>
+                <td>{{empleado.correo}}</td>
+                <td>{{empleado.direccion}}</td>
+                <td>{{empleado.telefono}}</td>
+                <td>
+                  {{link-to "Editar" "empleados.edit" empleado}}
+                </td>
+                <td>
+                  {{link-to "Mostrar" "empleados.show" empleado}}
+                </td>
+                <td>
+                  <a href="#" {{action "remove" empleado}}>Eliminar</a>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        <p id="blankslate">
+          No hay empleados
+        </p>
+      {{/if}}
+    </div>
+  </div>
+</div>

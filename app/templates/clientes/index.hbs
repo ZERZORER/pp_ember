@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row"  >
+    <div class="col-sm-8 col-sm-offset-2 fondo">
+      <center><h1 class="fondow">Clientes</h1></center>
+
+      <p>
+        {{link-to "Nuevo Cliente" "clientes.new" class="btn btn-info btn-block"}}
+      </p>
+
+      {{#if model.length}}
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Paterno</th>
+              <th>Materno</th>
+              <th>Correo</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
+              <th colspan="3">
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each model as |cliente|}}
+              <tr>
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.paterno}}</td>
+                <td>{{cliente.materno}}</td>
+                <td>{{cliente.correo}}</td>
+                <td>{{cliente.direccion}}</td>
+                <td>{{cliente.telefono}}</td>
+                <td>
+                  {{link-to "Editar" "clientes.edit" cliente}}
+                </td>
+                <td>
+                  {{link-to "Mostrar" "clientes.show" cliente}}
+                </td>
+                <td>
+                  <a href="#" {{action "remove" cliente}}>Eliminar</a>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        <p id="blankslate">
+          No hay clientes
+        </p>
+      {{/if}}
+    </div>
+  </div>
+</div>

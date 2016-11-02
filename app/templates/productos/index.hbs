@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row"  >
+    <div class="col-sm-8 col-sm-offset-2 fondo">
+      <center><h1 class="fondow">Productos</h1></center>
+
+      <p>
+        {{link-to "Nuevo Producto" "productos.new" class="btn btn-info btn-block"}}
+      </p>
+
+      {{#if model.length}}
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Precio</th>
+              <th colspan="3">
+                Acciones
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each model as |producto|}}
+              <tr>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.descripcion}}</td>
+                <td>{{producto.precio}}</td>
+                <td>
+                  {{link-to "Editar" "productos.edit" producto}}
+                </td>
+                <td>
+                  {{link-to "Mostrar" "productos.show" producto}}
+                </td>
+                <td>
+                  <a href="#" {{action "remove" producto}}>Eliminar</a>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        <p id="blankslate">
+          No hay productos
+        </p>
+      {{/if}}
+    </div>
+  </div>
+</div>

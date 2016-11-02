@@ -1,0 +1,26 @@
+<form {{action "save" on="submit"}}>
+  <div class="form-group">
+    <label>
+      Nombre:
+      {{input type="text" value=model.nombre class="form-control" maxlength=20}}
+      {{chars-remaining count=model.nombre.length limit=20 noticeCount=10}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Descripcion:
+      {{input type="text" value=model.descripcion class="form-control" maxlength=30}}
+      {{chars-remaining count=model.descripcion.length limit=30 noticeCount=10}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Precio:
+      {{input type="text" value=model.precio class="form-control" maxlength=10}}
+      {{chars-remaining count=model.precio.length limit=10 noticeCount=5}}
+    </label>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-default" value="save">Guardar</button>
+  </div>
+</form>

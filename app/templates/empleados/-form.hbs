@@ -1,0 +1,54 @@
+<form {{action "save" on="submit"}}>
+  <div class="form-group">
+    <label>
+      Nombre:
+      {{input type="text" value=model.nombre class="form-control" maxlength=20}}
+      {{chars-remaining count=model.nombre.length limit=20 noticeCount=10}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Paterno:
+      {{input type="text" value=model.paterno class="form-control" maxlength=20}}
+      {{chars-remaining count=model.paterno.length limit=20 noticeCount=10}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Materno:
+      {{input type="text" value=model.materno class="form-control" maxlength=20}}
+      {{chars-remaining count=model.materno.length limit=20 noticeCount=10}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Correo:
+      {{input type="text" value=model.correo class="form-control" maxlength=30}}
+      {{chars-remaining count=model.correo.length limit=30 noticeCount=10}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Direccion:
+      {{input type="text" value=model.direccion class="form-control" maxlength=50}}
+      {{chars-remaining count=model.direccion.length limit=50 noticeCount=10}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Telefono:
+      {{input type="text" value=model.telefono class="form-control" maxlength=20}}
+      {{chars-remaining count=model.telefono.length limit=20 noticeCount=10}}
+    </label>
+  </div>
+  <div class="form-group">
+    <label>
+      Area:
+      {{input type="text" value=model.area class="form-control" maxlength=20}}
+      {{chars-remaining count=model.area.length limit=20 noticeCount=10}}
+    </label>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-default" value="save">Guardar</button>
+  </div>
+</form>
